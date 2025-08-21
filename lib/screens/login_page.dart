@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:healthy/screens/onBoarding/onBoardingOne.dart';
+import 'package:healthy/screens/onBoarding/onBoardingScreen.dart';
 import 'package:healthy/screens/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -127,13 +129,14 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      // If form is valid, proceed
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("Logging in...")),
-                      );
-                    }
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const OnBoardingWrapper(),
+                      ),
+                    );
                   },
+
                   child: const Text(
                     "Login",
                     style: TextStyle(fontSize: 18, color: Colors.white),
