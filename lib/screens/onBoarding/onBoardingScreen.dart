@@ -14,6 +14,13 @@ class OnBoardingWrapper extends StatefulWidget {
 class _OnBoardingWrapperState extends State<OnBoardingWrapper> {
   final PageController _controller = PageController();
 
+  void _onSkip() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => const HomePage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
