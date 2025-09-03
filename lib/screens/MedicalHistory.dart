@@ -38,7 +38,10 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text("Cancel"),
+            child: const Text(
+              "Cancel",
+              style: TextStyle(color: Colors.deepPurple),
+            ),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
@@ -48,7 +51,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
               }
               Navigator.pop(context);
             },
-            child: const Text("Save"),
+            child: const Text("Save", style: TextStyle(color: Colors.white)),
           ),
         ],
       ),
@@ -58,68 +61,57 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.deepPurple),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          "Medical History",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w700,
+            color: Colors.deepPurple,
+          ),
+        ),
+        centerTitle: true,
+      ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.deepPurple, // unified with theme
         onPressed: _showAddRecordDialog,
         child: const Icon(Icons.add, size: 28, color: Colors.white),
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: _records.isEmpty ? _buildEmptyState() : _buildHistoryList(),
-        ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: _records.isEmpty ? _buildEmptyState() : _buildHistoryList(),
       ),
     );
   }
 
   Widget _buildEmptyState() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.deepPurple),
-              onPressed: () => Navigator.pop(context),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset("assets/empty_medical.png", height: 180),
+          const SizedBox(height: 20),
+          const Text(
+            "You don’t have any records.",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: Colors.deepPurple,
             ),
-            const SizedBox(width: 4),
-            const Text(
-              "Medical History",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                color: Colors.deepPurple,
-              ),
-            ),
-          ],
-        ),
-        const Spacer(),
-        Center(
-          child: Column(
-            children: [
-              Image.asset(
-                "assets/empty_medical.png",
-                height: 180,
-              ), // add image asset
-              const SizedBox(height: 20),
-              const Text(
-                "You don’t have any records.",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.deepPurple,
-                ),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                "Click the plus button to add",
-                style: TextStyle(fontSize: 14, color: Colors.grey),
-              ),
-            ],
           ),
-        ),
-        const Spacer(),
-      ],
+          const SizedBox(height: 8),
+          const Text(
+            "Click the plus button to add",
+            style: TextStyle(fontSize: 14, color: Colors.grey),
+          ),
+        ],
+      ),
     );
   }
 
@@ -127,24 +119,6 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.deepPurple),
-              onPressed: () => Navigator.pop(context),
-            ),
-            const SizedBox(width: 4),
-            const Text(
-              "Medical History",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                color: Colors.deepPurple,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
         Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
@@ -162,10 +136,7 @@ class _MedicalHistoryScreenState extends State<MedicalHistoryScreen> {
                 ),
               ),
               const Spacer(),
-              Image.asset(
-                "assets/history_banner.png",
-                height: 40,
-              ), // banner image
+              Image.asset("assets/history_banner.png", height: 40),
             ],
           ),
         ),

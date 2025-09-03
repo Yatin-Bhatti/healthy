@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import '../widgets/FeatureTile.dart';
 import '../screens/ChatScreen.dart'; // <-- import the new screen
 import "../screens/MedicalHistory.dart";
+import "../screens/FindYourself.dart";
+import "../screens/LabResults.dart";
+import "../screens/DietChart.dart";
 
 class HomeContent extends StatelessWidget {
   const HomeContent({super.key});
@@ -37,7 +40,12 @@ class HomeContent extends StatelessWidget {
           title: "Your Diet Chart",
           tileColor: tileColor,
           asset: "assets/dietChart.png",
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const DietChartScreen()),
+            );
+          },
         ),
         const SizedBox(height: 14),
         FeatureTile(
@@ -56,7 +64,12 @@ class HomeContent extends StatelessWidget {
           title: "Lab Results",
           tileColor: tileColor,
           asset: "assets/labResults.png",
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const LabResultsScreen()),
+            );
+          },
         ),
         const SizedBox(height: 14),
         FeatureTile(
@@ -75,7 +88,12 @@ class HomeContent extends StatelessWidget {
           title: "Finding yourself",
           tileColor: tileColor,
           asset: "assets/findYourself.png",
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const FindYourselfScreen()),
+            );
+          },
         ),
       ],
     );
