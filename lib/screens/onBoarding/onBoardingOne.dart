@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthy/screens/HomePage.dart';
 
 class OnBoardingOne extends StatelessWidget {
   const OnBoardingOne({super.key});
@@ -70,6 +71,15 @@ class OnBoardingOne extends StatelessWidget {
                     shape: BoxShape.circle,
                   ),
                 ),
+                const SizedBox(width: 6),
+                Container(
+                  width: 8,
+                  height: 8,
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple.shade100,
+                    shape: BoxShape.circle,
+                  ),
+                ),
               ],
             ),
 
@@ -77,7 +87,12 @@ class OnBoardingOne extends StatelessWidget {
 
             // Skip Button
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => const HomePage()),
+                );
+              },
               child: const Text(
                 "Skip Tour",
                 style: TextStyle(

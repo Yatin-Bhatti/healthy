@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 
 // Import all sub-screens
 import 'AccountSubScreen/AccountSub.dart';
+import 'AccountSubScreen/NotificationSub.dart';
+import 'AccountSubScreen/AppearanceSub.dart';
+import 'AccountSubScreen/PrivacySub.dart';
+import 'AccountSubScreen/SoundSub.dart';
+import 'AccountSubScreen/LanguageSub.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -91,35 +96,35 @@ class AccountScreen extends StatelessWidget {
                   "Account",
                   const AccountSubScreen(),
                 ),
-                // _buildSettingsItem(
-                //   context,
-                //   Icons.notifications_none,
-                //   "Notification",
-                //   const NotificationScreen(),
-                // ),
-                // _buildSettingsItem(
-                //   context,
-                //   Icons.remove_red_eye_outlined,
-                //   "Appearance",
-                //   const AppearanceScreen(),
-                // ),
-                // _buildSettingsItem(
-                //   context,
-                //   Icons.security_outlined,
-                //   "Privacy & Security",
-                //   const PrivacySecurityScreen(),
-                // ),
-                // _buildSettingsItem(
-                //   context,
-                //   Icons.volume_up_outlined,
-                //   "Sound",
-                //   const SoundScreen(),
-                // ),
+                _buildSettingsItem(
+                  context,
+                  Icons.notifications_none,
+                  "Notification",
+                  const NotificationSubScreen(),
+                ),
+                _buildSettingsItem(
+                  context,
+                  Icons.remove_red_eye_outlined,
+                  "Appearance",
+                  const AppearanceSubScreen(),
+                ),
+                _buildSettingsItem(
+                  context,
+                  Icons.security_outlined,
+                  "Privacy & Security",
+                  const PrivacySubScreen(),
+                ),
+                _buildSettingsItem(
+                  context,
+                  Icons.volume_up_outlined,
+                  "Sound",
+                  const SoundSubScreen(),
+                ),
                 // _buildSettingsItem(
                 //   context,
                 //   Icons.language_outlined,
                 //   "Language",
-                //   const LanguageScreen(),
+                //   const LanguageSubScreen(),
                 // ),
               ],
             ),

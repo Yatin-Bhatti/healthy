@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthy/screens/HomePage.dart';
 import 'package:healthy/screens/onBoarding/onBoardingOne.dart';
 import 'package:healthy/screens/onBoarding/onBoardingScreen.dart';
 import 'package:healthy/screens/signup_page.dart';
@@ -129,11 +130,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => const OnBoardingWrapper(),
-                      ),
+                      MaterialPageRoute(builder: (_) => const HomePage()),
                     );
                   },
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthy/screens/onBoarding/onBoardingScreen.dart';
 import 'login_page.dart'; // for navigation back to login
 
 class SignupPage extends StatelessWidget {
@@ -113,7 +114,14 @@ class SignupPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OnBoardingWrapper(),
+                    ),
+                  );
+                },
                 child: const Text(
                   "Sign Up",
                   style: TextStyle(fontSize: 18, color: Colors.white),

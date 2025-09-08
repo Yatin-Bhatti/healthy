@@ -15,7 +15,7 @@ class StatScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "📊 Your Health Stats",
+                "Your Health Stats",
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,

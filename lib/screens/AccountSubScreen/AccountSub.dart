@@ -6,7 +6,17 @@ class AccountSubScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Account")),
+      appBar: AppBar(
+        title: const Text(
+          "Account",
+          style: TextStyle(color: Colors.deepPurple), // 👈 Title color
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.deepPurple, // 👈 Back button color
+        ),
+
+        centerTitle: true,
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -32,8 +42,14 @@ class AccountSubScreen extends StatelessWidget {
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {},
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-            child: const Text("Logout"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white,
+              minimumSize: const Size(200, 45), // 👈 width, height
+            ),
+            child: const Text(
+              "Logout",
+              style: TextStyle(color: Colors.deepPurple),
+            ),
           ),
         ],
       ),
